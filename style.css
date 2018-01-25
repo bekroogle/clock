@@ -3,6 +3,10 @@
     border-radius: 50%;
     height: 300px;
     width: 300px;
+
+    background-image: url('slow-watch-face.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #hand {
