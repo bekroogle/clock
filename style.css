@@ -1,21 +1,26 @@
 #clockface {
-    border: 2px solid black;
     border-radius: 50%;
     height: 300px;
     width: 300px;
-
+    position: absolute;
     background-image: url('slow-watch-face.svg');
     background-size: contain;
     background-repeat: no-repeat;
+    
 }
 
 #hand {
-    background-color: darkgray;
-    top: 150px;
-    height: 5px;
+    
+    top: 142px;
+    left: 33px;
+    height: 16px;
     width: 145px;
     position: absolute;
     transform: rotate(90deg);
-    transform-origin: 100%;
-    border-radius: 5px;
+    transform-origin: 117px 8px;
+    /* border-radius: 5px; */
+
+    background-image: url('watch-hand.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
