@@ -30,12 +30,10 @@ let maximizeClock = () => {
 };
 
 window.onload = function(e) {
-    console.log('loaded');
     maximizeClock();
 };
 
 window.addEventListener('resize', function(evt) {
-    console.log('resized');
     maximizeClock();
 });
 
