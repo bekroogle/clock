@@ -1,6 +1,6 @@
 const handHolder = document.querySelector('#hand-holder');
 const face = document.querySelector('#clockface');
-
+const margin = 14;
 /**
  * Moves the hand of the clock, using radians, such that it makes a full
  * circle in 24 hours.
@@ -11,9 +11,12 @@ let moveHand = () => {
         minutes = dateTime.getMinutes(),
         seconds = dateTime.getSeconds();
 
-    let rotateAmount = (hours * Math.PI / 12);
+    let rotateAmount = (hours * Math.PI / 12); // π÷12 => 2π÷24
     rotateAmount += minutes * Math.PI / 720;
+
+    // There's really no reason to do this. It's not really visible:
     rotateAmount += seconds * Math.PI / 43200;
+
     handHolder.style.setProperty('transform', `rotate(${rotateAmount}rad)`);
 };
 
@@ -22,8 +25,8 @@ let moveHand = () => {
  * diameter based on the smaller of the two.
  */
 let maximizeClock = () => {
-    var availHeight = 0.9 * window.innerHeight;
-    var availWidth = 0.9 * window.innerWidth;
+    var availHeight =  window.innerHeight - margin;
+    var availWidth =  window.innerWidth - margin;
     availSpace = availWidth < availHeight ? availWidth : availHeight;
     face.style.setProperty('width', `${availSpace}px`);
     face.style.setProperty('height', `${availSpace}px`);

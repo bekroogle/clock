@@ -1,14 +1,42 @@
+/* Hide the scrollbars, since the content is self-maximizing. */
+body {
+    overflow: hidden;
+}
+
+/* Flexbox to keep the clock centered along both axes. */
+.container {
+    display: flex;
+    height: 100%;
+    align-items:center;
+}
+
+/* Blank divs to the left and right of the clock face. */
+.spacer {
+    height: 100%;
+    flex-grow: 1;
+    min-width: 20px;
+}
+
 #clockface {
     border-radius: 50%;
     height: 300px;
     width: 300px;
-    position: absolute;
     background-image: url('3d-watch-face.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    
 }
 
+/* A transparent container for the clock hand that stretches   
+   the entire diameter of the clock--useful for simple transform origin
+   as well as scaling up the clock to match the window size. */
+   #hand-holder {
+    transition-timing-function: ease-in-out;
+    transition-duration: 1000ms;
+    height: 6%;
+    margin-top: 47%;
+}
+
+/* A child of the #hand-holder, this has the actual hand as its background-image.*/
 #hand {
     height: 100%;
     transform: rotate(-90deg);
@@ -17,12 +45,3 @@
     background-repeat: no-repeat;
 }
 
-/* A transparent container for the clock hand that stretches   
-   the entire diameter of the clock--useful for simple transform origin
-   as well as scaling up the clock to match the window size. */
-#hand-holder {
-    transition-timing-function: ease-in-out;
-    transition-duration: 1000ms;
-    height: 6%;
-    margin-top: 47%;
-}
