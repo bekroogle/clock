@@ -21,6 +21,8 @@
    the entire diameter of the clock--useful for simple transform origin
    as well as scaling up the clock to match the window size. */
 #hand-holder {
+    transition-timing-function: ease-in-out;
+    transition-duration: 1000ms;
     height: 6%;
     margin-top: 47%;
 }
