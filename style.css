@@ -10,17 +10,17 @@
 }
 
 #hand {
-    
-    top: 142px;
-    left: 33px;
-    height: 16px;
-    width: 145px;
-    position: absolute;
-    transform: rotate(90deg);
-    transform-origin: 117px 8px;
-    /* border-radius: 5px; */
-
+    height: 100%;
+    transform: rotate(-90deg);
     background-image: url('watch-hand.svg');
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+/* A transparent container for the clock hand that stretches   
+   the entire diameter of the clock--useful for simple transform origin
+   as well as scaling up the clock to match the window size. */
+#hand-holder {
+    height: 6%;
+    margin-top: 47%;
 }
